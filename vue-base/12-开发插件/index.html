@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Vue.js</title>
+    <script src="../../statis/js/vue.js"></script>
+    <!--引入自定义的插件，注意引入顺序-->
+    <script src="vue-testPlugin.js"></script>
+</head>
+<body>
+<div id="app" align="center">
+
+    <h3>了解开发插件</h3>
+
+    <p>使用插件中定义的指令将输入内容转化为大写</p>
+    <input type="text" placeholder="请输入要转化大写的单词" v-model="input1">
+    <p v-my-directive="input1"></p>
+
+</div>
+<script src="app.js"></script>
+</body>
+</html>

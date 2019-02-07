@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Vue.js</title>
+    <script src="../../statis/js/vue.js"></script>
+    <style>
+        /*v-enter-active：定义进入过渡生效时的状态*/
+        /*v-leave-active：定义离开过渡生效时的状态*/
+        .fade-enter-active, .fade-leave-active {
+            transition: opacity 2s;
+        }
+
+        /*v-enter：定义进入过渡的开始状态*/
+        /*v-leave-to: 定义离开过渡的结束状态*/
+        .fade-enter, .fade-leave-to {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="app" align="center">
+
+    <h3>进入/离开 & 列表过渡</h3>
+
+    <button @click="show=!show">切换</button>
+    <transition name="fade">
+        <p v-if="show">welcome to vue</p>
+    </transition>
+
+</div>
+<script src="app.js"></script>
+</body>
+</html>

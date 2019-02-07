@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Vue.js</title>
+    <script src="../../statis/js/vue.js"></script>
+    <style>
+        .colorA {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+<div id="app" align="center">
+    <h1>绑定 HTML Class</h1>
+    <p v-bind:class="a">表达式是字符串</p>
+    <p :class="{ active: isActive }">表达式是对象</p>
+    <p :class="[ activeClass,errorClass ]">表达式是数组</p>
+    <br>
+
+    <h1>绑定内联样式</h1>
+    <p :style="{ color: activeColor, fontSize: fontSize+'px'}">:style="{ color: activeColor, fontSize: fontSize+'px'}</p>
+    <p :style="myStyle">:style="myStyle"</p>
+
+</div>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Vue.js</title>
+    <script src="../../statis/js/vue.js"></script>
+</head>
+<body>
+
+<div id="app" align="center">
+    <h1> Computed计算属性 </h1>
+    <button @click="a++">add 1 to A</button>
+    <button @click="b++">add 1 to B</button>
+    <p>A : {{a}}</p>
+    <p>B : {{b}}</p>
+    <p>Age + A = {{addA}}</p>
+    <p>Age + B = {{addB}}</p>
+
+    姓氏:<input type="text" v-model="firstName">
+    <br>
+    名字:<input type="text" v-model="lastName">
+    <br>
+    姓名(单向改变):<input type="text" v-model="fullName">
+    <br>
+    姓名(双向改变):<input type="text" v-model="fullName2">
+    <br>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

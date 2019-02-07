@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <title>Vue.js</title>
+    <script src="../../statis/js/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+
+    <p>use mustaches：{{url}}</p>
+    <p>use v-html：<span v-html="url"></span></p>
+    <br>
+
+    <p>使用v-model实现双向绑定，如v-model="message"</p>
+    <input type="text" v-model="message">
+    <p>输入的内容：{{message}}</p>
+    <br>
+
+    <p>使用v-on:click=""或@click实现事件监听，如@click="increaseCount"</p>
+    <button @click="increaseCount">点击增加</button>
+    <p>次数：{{count}}</p>
+    <br>
+
+    <!--https://cn.vuejs.org/images/logo.png-->
+    <p>Mustache 语法不能作用在 HTML 特性上，遇到这种情况应该使用 v-bind 指令：如v-bind:src="imgUrl"</p>
+    <img v-bind:src="imgUrl">
+    <br>
+
+    <p>可以简写为:src="imgUrl"</p>
+    <img :src="imgUrl">
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

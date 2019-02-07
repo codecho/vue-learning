@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Vue.js</title>
+    <script src="../../statis/js/vue.js"></script>
+</head>
+<body>
+<div id="app" align="center">
+
+    <h3>自定义指令</h3>
+
+    <p>注册局部指令将输入内容转化为大写</p>
+    <input type="text" placeholder="请输入要转化大写的单词" v-model="input1">
+    <p v-uppertext="input1"></p>
+
+    <p>注册全局指令将输入内容转化为小写</p>
+    <input type="text" placeholder="请输入要转化小写的单词" v-model="input2">
+    <p v-lowertext="input2"></p>
+
+</div>
+<script src="app.js"></script>
+</body>
+</html>

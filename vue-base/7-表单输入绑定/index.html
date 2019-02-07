@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Vue.js</title>
+    <script src="../../statis/js/vue.js"></script>
+</head>
+<body>
+<div id="app" align="center">
+    <h3>表单输入绑定</h3>
+
+    <form>
+        <h4>文本</h4>
+        <span>姓名</span>
+        <input type="text" v-model="name" placeholder="请输入姓名">
+        <br>
+        <span>input:{{name}}</span>
+        <br>
+
+        <h4>单选按钮</h4>
+        <span>性别</span>
+        <input type="radio" id="male" v-model="gender" value="男">
+        <label for="male">男</label>
+        <input type="radio" id="female" v-model="gender" value="女">
+        <label for="female">女</label>
+        <br>
+        <span>selected:{{gender}}</span>
+        <br>
+
+        <h4>复选框</h4>
+        <span>方向</span>
+        <input type="checkbox" id="majorJava" v-model="major" value="Java">
+        <label for="majorJava">Java</label>
+        <input type="checkbox" id="majorAndroid" v-model="major" value="Android">
+        <label for="majorAndroid">Android</label>
+        <input type="checkbox" id="majorC" v-model="major" value="C/C++">
+        <label for="majorC">C/C++</label>
+        <input type="checkbox" id="majorPython" v-model="major" value="Python">
+        <label for="majorPython">Python</label>
+        <br>
+        <span>selected:{{major}}</span>
+        <br>
+
+        <h4>选择框---单选</h4>
+        <span>婚姻状态</span>
+        <select id="maritalStatus" v-model="maritalStatus">
+            <option value="" disabled>请选择</option>
+            <option value="no">未婚</option>
+            <option value="yes">已婚</option>
+            <option value="secret">保密</option>
+        </select>
+        <br>
+        <span>selected:{{maritalStatus}}</span>
+        <br>
+
+        <h4>选择框---多选（绑定到一个数组）</h4>
+        <span>爱好</span>
+        <select id="hobby" multiple v-model="hobby" style="width: 50px;">
+            <option value="" disabled>请选择</option>
+            <option value="爬山">爬山</option>
+            <option value="旅游">旅游</option>
+            <option value="看书">看书</option>
+            <option value="听音乐">听音乐</option>
+        </select>
+        <br>
+        <span>selected:{{hobby}}</span>
+        <br>
+
+        <h4>选择框---使用v-for动态渲染选项</h4>
+        <span>职业</span>
+        <select id="profession" v-model="profession">
+            <option value="" disabled>请选择</option>
+            <option v-for="option in professionOptions" :key="option.text" :value="option.value">
+                {{option.text}}
+            </option>
+        </select>
+        <br>
+        <span>selected:{{profession}}</span>
+        <br>
+
+        <h4>多行文本</h4>
+        <span>自我评价</span>
+        <textarea id="self-appraisal" v-model="selfAppraisal" placeholder="请输入自我评价" cols="30" rows="10"></textarea>
+        <br>
+        <p>input:{{selfAppraisal}}</p>
+    </form>
+
+</div>
+<script src="app.js"></script>
+</body>
+</html>

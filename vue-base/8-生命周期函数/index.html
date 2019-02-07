@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Vue.js</title>
+    <script src="../../statis/js/vue.js"></script>
+</head>
+<body>
+<div id="app" align="center">
+
+    <h3>生命周期函数</h3>
+    <h4>观察控制台打印信息</h4>
+
+    <p>常用生命周期方法：mouted()：发送ajax请求获取数据，启动定时器等异步操作</p>
+    <p>常用生命周期方法：beforeDestroy()：执行收尾工作，如清除定时器</p>
+    <p>count:{{count}}</p>
+    <button @click="count++">点击更新count</button>
+    <button @click="destroyVM">点击销毁Vue实例</button>
+    <br>
+
+    <h2>生命周期图示</h2>
+    <img src="lifecycle.png" width="600px" height="1519px">
+
+</div>
+<script src="app.js"></script>
+</body>
+</html>

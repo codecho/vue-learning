@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Vue.js</title>
+    <script src="../../statis/js/vue.js"></script>
+</head>
+<body>
+<div id="app" align="center">
+
+    <!--有时，我们想要显示一个数组的过滤或排序副本，而不实际改变或重置原始数据。在这种情况下，可以创建返回过滤或排序数组的计算属性-->
+    <h3>显示过滤/排序结果</h3>
+
+    输入：<input type="text" v-model="name">
+    <button @click="order=1">按照年龄升序排序</button>
+    <button @click="order=-1">按照年龄降序排序</button>
+    <ul>
+        <li v-for="(hero,index) in sortedHeroes" :key="index">
+            {{hero.name}} {{hero.age}} {{hero.nationality}}
+        </li>
+    </ul>
+
+</div>
+<script src="app.js"></script>
+</body>
+</html>

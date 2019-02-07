@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Vue.js</title>
+    <script src="../../statis/js/vue.js"></script>
+    <!--引入moment.js-->
+    <script src="https://cdn.bootcss.com/moment.js/2.24.0/moment.js"></script>
+</head>
+<body>
+<div id="app" align="center">
+
+    <h3>Vue.js 允许自定义过滤器，可被用于一些常见的文本格式化。过滤器可以用在两个地方：双花括号插值和 v-bind 表达式</h3>
+    <br>
+
+    <h3>在一个组件的选项中定义本地的过滤器</h3>
+    <p>当前时间(年-月-日 时:分:秒):{{date | dateFormat}}</p>
+    <p>当前时间(年/月/日):{{date | dateFormat('YYYY/MM/DD')}}</p>
+    <p>当前时间(时:分:秒):{{date | dateFormat('HH:mm:ss')}}</p>
+    <br>
+
+    <h3>在创建 Vue 实例之前全局定义过滤器</h3>
+    <p>当前时间(年-月-日 时:分:秒):{{date | globalDateFormat}}</p>
+
+</div>
+<script src="app.js"></script>
+</body>
+</html>

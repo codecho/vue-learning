@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Vue.js</title>
+    <script src="../../statis/js/vue.js"></script>
+</head>
+<body>
+<div id="app" align="center">
+    <h1>Events</h1>
+
+    <!-- 通过{{ hello("我是") }}调用方法时需要加上括号，不然有可能是属性 -->
+    <!-- 通过v-on:click="incAge()"调用方法时可以加括号，也可以不加括号，因为一定是方法，不会是属性，如果要传参时则需要加括号-->
+    <!-- v-on:click(dblclick)可以用@click(dblclick)来替换 -->
+
+    <h3>使用变量 $event 将时间传入方法</h3>
+    <button @click="hitButton('hello',$event)">按钮</button>
+
+    <h3>通过v-on:click=""实现单击事件</h3>
+    <button v-on:click="incAge(1)">单击长一岁</button>
+    <button @click="decAge(1)">单击减一岁</button>
+    <br>
+
+    <h3>通过v-on:dblclick=""实现双击事件</h3>
+    <button v-on:dblclick.once="incAge(10)">双击长十岁（只能点击一次）</button>
+    <button @dblclick="decAge(10)">双击减十岁</button>
+    <p>My age is {{age}}</p>
+    <br>
+
+    <div id="canvas" v-on:mousemove="showXY">
+        <p>X：{{x}}</p>
+        <p>Y：{{y}}</p>
+        <p @mousemove.stop="stopThis">通过@mousemove.stop=""停止显示</p>
+        <p @mousemove="stopShow">通过event.stopPropagation()停止显示</p>
+    </div>
+    <br>
+
+    <a @click.prevent="stopSkip" href="https://blog.csdn.net/weixin_36512652">通过@click.prevent="stopSkip"禁止跳转</a>
+    <br>
+    <p>通过@keyup.enter="pressEnter"判断是否按下Enter键</p>
+    <input type="text" v-model="input" @keyup.enter="pressEnter">
+</div>
+<script src="app.js"></script>
+</body>
+</html>
