@@ -3,8 +3,12 @@
         <ul>
             <li v-for="company in companies" :key="company.id">
                 <router-link :to="`/home/company/info/${company.id}`">{{company.name}}</router-link>
+                <button @click="push(company.id)" class="btn btn-default">router.push</button>
+                <button @click="replace(company.id)" class="btn btn-primary">router.replace</button>
             </li>
         </ul>
+        <button @click="$router.back()" class="btn btn-primary">router.back</button>
+        <button @click="$router.go(1)" class="btn btn-default">router.go</button>
 
         <hr>
         <router-view></router-view>
@@ -41,6 +45,14 @@
                     }
                 ]
             }, 1000);
+        },
+        methods: {
+            push: function (id) {
+                this.$router.push(`/home/company/info/${id}`);
+            },
+            replace: function (id) {
+                this.$router.replace(`/home/company/info/${id}`);
+            }
         }
     }
 </script>
