@@ -12,8 +12,8 @@
                     <router-link to="/home" class="list-group-item">Home</router-link>
                     <router-link to="/about" class="list-group-item">About</router-link>
                 </div>
-                <div class="col-md-4">
-                    <router-view></router-view>
+                <div class="col-md-8">
+                    <router-view msg="this is message"></router-view>
                 </div>
             </div>
         </div>

@@ -4,6 +4,7 @@ import About from '../views/About.vue'
 import Home from '../views/Home.vue'
 import Language from '../views/Language.vue'
 import Company from '../views/Company.vue'
+import CompanyInfo from '../views/CompanyInfo.vue'
 
 Vue.use(VueRouter)
 
@@ -19,7 +20,13 @@ export default new VueRouter({
                 },
                 {
                     path: 'company',
-                    component: Company
+                    component: Company,
+                    children: [
+                        {
+                            path: '/home/company/info/:id',
+                            component: CompanyInfo
+                        }
+                    ]
                 },
                 {
                     path: '',

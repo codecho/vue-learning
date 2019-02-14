@@ -1,8 +1,13 @@
 <template>
     <div>
         <ul>
-            <li v-for="company in companies" :key="company.id">{{company.name}}</li>
+            <li v-for="company in companies" :key="company.id">
+                <router-link :to="`/home/company/info/${company.id}`">{{company.name}}</router-link>
+            </li>
         </ul>
+
+        <hr>
+        <router-view></router-view>
     </div>
 </template>
 
